@@ -15,7 +15,7 @@ export default async function AdminPage() {
     redirect("/admin/login");
   }
 
-  const inquiries = getInquiries();
+  const inquiries = await getInquiries();
   const newCount = inquiries.filter((i) => i.status === "new").length;
 
   return (

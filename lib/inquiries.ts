@@ -1,7 +1,11 @@
-import fs from "fs";
-import path from "path";
+import { Redis } from "@upstash/redis";
 
-const DATA_FILE = path.join(process.cwd(), "data", "inquiries.json");
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
+
+const KEY = "inquiries";
 
 export type InquiryStatus = "new" | "read" | "resolved";
 
@@ -17,29 +21,30 @@ export interface Inquiry {
   status: InquiryStatus;
 }
 
-function readAll(): Inquiry[] {
+async function readAll(): Promise<Inquiry[]> {
   try {
-    const raw = fs.readFileSync(DATA_FILE, "utf-8");
-    return JSON.parse(raw) as Inquiry[];
+    const data = await redis.get<Inquiry[]>(KEY);
+    return data ?? [];
   } catch {
     return [];
   }
 }
 
-function writeAll(inquiries: Inquiry[]): void {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(inquiries, null, 2), "utf-8");
+async function writeAll(inquiries: Inquiry[]): Promise<void> {
+  await redis.set(KEY, inquiries);
 }
 
-export function getInquiries(): Inquiry[] {
-  return readAll().sort(
+export async function getInquiries(): Promise<Inquiry[]> {
+  const all = await readAll();
+  return all.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   );
 }
 
-export function createInquiry(
+export async function createInquiry(
   data: Omit<Inquiry, "id" | "createdAt" | "status"> & { location?: string }
-): Inquiry {
-  const inquiries = readAll();
+): Promise<Inquiry> {
+  const inquiries = await readAll();
   const inquiry: Inquiry = {
     ...data,
     id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
@@ -47,26 +52,26 @@ export function createInquiry(
     status: "new",
   };
   inquiries.push(inquiry);
-  writeAll(inquiries);
+  await writeAll(inquiries);
   return inquiry;
 }
 
-export function updateInquiry(
+export async function updateInquiry(
   id: string,
   patch: Partial<Pick<Inquiry, "status">>
-): Inquiry | null {
-  const inquiries = readAll();
+): Promise<Inquiry | null> {
+  const inquiries = await readAll();
   const idx = inquiries.findIndex((i) => i.id === id);
   if (idx === -1) return null;
   inquiries[idx] = { ...inquiries[idx], ...patch };
-  writeAll(inquiries);
+  await writeAll(inquiries);
   return inquiries[idx];
 }
 
-export function deleteInquiry(id: string): boolean {
-  const inquiries = readAll();
+export async function deleteInquiry(id: string): Promise<boolean> {
+  const inquiries = await readAll();
   const next = inquiries.filter((i) => i.id !== id);
   if (next.length === inquiries.length) return false;
-  writeAll(next);
+  await writeAll(next);
   return true;
 }

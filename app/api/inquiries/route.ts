@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
     }
     const location = await getLocation(req);
-    const inquiry = createInquiry({ name, email, phone: phone ?? "", service: service ?? "", message: message ?? "", location });
+    const inquiry = await createInquiry({ name, email, phone: phone ?? "", service: service ?? "", message: message ?? "", location });
     return NextResponse.json(inquiry, { status: 201 });
   } catch {
     return NextResponse.json({ error: "Failed to save inquiry." }, { status: 500 });
@@ -41,5 +41,5 @@ export async function GET() {
   if (!token || token !== process.env.ADMIN_PASSWORD) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  return NextResponse.json(getInquiries());
+  return NextResponse.json(await getInquiries());
 }
