@@ -3,8 +3,6 @@ import { createInquiry, getInquiries } from "@/lib/inquiries";
 import { cookies } from "next/headers";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 async function getLocation(req: NextRequest): Promise<string | undefined> {
   try {
     const ip =
@@ -35,6 +33,7 @@ export async function POST(req: NextRequest) {
 
     const ownerEmail = process.env.OWNER_EMAIL;
     if (ownerEmail && process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY);
       const serviceLabel: Record<string, string> = {
         attended: "Attended Ceremony",
         unattended: "Unattended Burial",
