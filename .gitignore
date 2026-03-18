@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# env files — never commit secrets
+.env
+.env.local
+.env*.local
+
+# data (inquiry storage — local only)
+data/
+
+# Claude Code
+.claude/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
