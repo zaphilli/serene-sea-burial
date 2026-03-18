@@ -15,11 +15,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#process", label: "Our Process" },
-    { href: "#about", label: "About" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/services", label: "Services" },
+    { href: "/about", label: "About" },
+    { href: "/faq", label: "FAQ" },
+    { href: "/blog", label: "Blog" },
   ];
 
   return (
@@ -46,26 +45,26 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              style={{ fontFamily: "Jost, sans-serif" }}
+              style={{ fontFamily: "var(--font-body)" }}
               className="text-sm tracking-widest uppercase text-mist hover:text-seafoam transition-colors duration-300 hover-underline"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
         <div className="hidden md:block">
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="btn-ocean px-6 py-2.5 rounded-full border border-seafoam/40 text-seafoam text-sm tracking-widest uppercase hover:border-seafoam hover:bg-seafoam/10 transition-all duration-300"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu */}
@@ -75,9 +74,21 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <div className="flex flex-col gap-1.5">
-            <span className={`block w-6 h-px bg-current transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-6 h-px bg-current transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-px bg-current transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span
+              className={`block w-6 h-px bg-current transition-all duration-300 ${
+                menuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-px bg-current transition-all duration-300 ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-6 h-px bg-current transition-all duration-300 ${
+                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
           </div>
         </button>
       </div>
@@ -85,29 +96,29 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div
         className={`md:hidden glass transition-all duration-500 overflow-hidden ${
-          menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              style={{ fontFamily: "Jost, sans-serif" }}
+              style={{ fontFamily: "var(--font-body)" }}
               className="text-sm tracking-widest uppercase text-mist hover:text-seafoam transition-colors duration-300"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             onClick={() => setMenuOpen(false)}
             className="text-sm tracking-widest uppercase text-seafoam border border-seafoam/40 rounded-full px-5 py-2 text-center"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

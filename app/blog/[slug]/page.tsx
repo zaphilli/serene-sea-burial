@@ -57,7 +57,7 @@ function renderSection(section: Section, i: number) {
         <h2
           key={i}
           style={{
-            fontFamily: "Cormorant Garamond, serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 400,
             fontSize: "clamp(1.5rem, 3vw, 2rem)",
           }}
@@ -72,7 +72,7 @@ function renderSection(section: Section, i: number) {
         <h3
           key={i}
           style={{
-            fontFamily: "Cormorant Garamond, serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 400,
             fontSize: "1.3rem",
             fontStyle: "italic",
@@ -87,7 +87,7 @@ function renderSection(section: Section, i: number) {
       return (
         <p
           key={i}
-          style={{ fontFamily: "Jost, sans-serif", fontWeight: 300, lineHeight: 1.9 }}
+          style={{ fontFamily: "var(--font-body)", fontWeight: 300, lineHeight: 1.9 }}
           className="text-mist/80 mb-5 text-[15px]"
         >
           {section.text}
@@ -106,7 +106,7 @@ function renderSection(section: Section, i: number) {
         >
           <p
             style={{
-              fontFamily: "Cormorant Garamond, serif",
+              fontFamily: "var(--font-display)",
               fontStyle: "italic",
               fontSize: "1.1rem",
               lineHeight: 1.7,
@@ -124,7 +124,7 @@ function renderSection(section: Section, i: number) {
           {section.items?.map((item, j) => (
             <li
               key={j}
-              style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
               className="text-mist/80 text-[15px] flex items-start gap-3"
             >
               <span className="text-seafoam mt-1 flex-shrink-0">—</span>
@@ -143,19 +143,19 @@ function renderSection(section: Section, i: number) {
               <tr style={{ background: "rgba(13,40,71,0.6)" }}>
                 <th
                   className="text-left px-5 py-3 text-mist/50 text-xs tracking-widest uppercase"
-                  style={{ fontFamily: "Jost, sans-serif", fontWeight: 400 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {header?.label}
                 </th>
                 <th
                   className="text-left px-5 py-3 text-mist/50 text-xs tracking-widest uppercase"
-                  style={{ fontFamily: "Jost, sans-serif", fontWeight: 400 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {header?.traditional}
                 </th>
                 <th
                   className="text-left px-5 py-3 text-seafoam text-xs tracking-widest uppercase"
-                  style={{ fontFamily: "Jost, sans-serif", fontWeight: 400 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {header?.sea}
                 </th>
@@ -173,19 +173,19 @@ function renderSection(section: Section, i: number) {
                 >
                   <td
                     className="px-5 py-3 text-pearl/70 text-xs tracking-wide"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     {row.label}
                   </td>
                   <td
                     className="px-5 py-3 text-mist/60 text-xs"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     {row.traditional}
                   </td>
                   <td
                     className="px-5 py-3 text-seafoam text-xs font-medium"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     {row.sea}
                   </td>
@@ -277,7 +277,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <Link
             href="/#contact"
             className="px-5 py-2 rounded-full border border-seafoam/40 text-seafoam text-xs tracking-widest uppercase hover:border-seafoam hover:bg-seafoam/10 transition-all duration-300"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Contact Us
           </Link>
@@ -299,14 +299,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
           <span
             className="inline-block text-seafoam text-xs tracking-[0.35em] uppercase mb-5"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             {post.category}
           </span>
 
           <h1
             style={{
-              fontFamily: "Cormorant Garamond, serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 300,
               fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
               lineHeight: 1.15,
@@ -318,7 +318,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
           <p
             style={{
-              fontFamily: "Cormorant Garamond, serif",
+              fontFamily: "var(--font-display)",
               fontStyle: "italic",
               fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
               fontWeight: 300,
@@ -332,7 +332,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <div className="divider-gold flex-1" />
             <span
               className="text-mist/35 text-xs tracking-widest"
-              style={{ fontFamily: "Jost, sans-serif" }}
+              style={{ fontFamily: "var(--font-body)" }}
             >
               {post.date} &nbsp;·&nbsp; {post.readTime}
             </span>
@@ -361,14 +361,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             }}
           />
           <h3
-            style={{ fontFamily: "Cormorant Garamond, serif", fontWeight: 400, fontSize: "1.8rem" }}
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "1.8rem" }}
             className="text-pearl mb-3"
           >
             We Are Here for You
           </h3>
           <p
             className="text-mist/60 text-sm mb-7 max-w-md mx-auto leading-relaxed"
-            style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
           >
             Whether you are planning ahead or navigating a loss right now, our team is ready to answer every question — with no pressure and no obligation.
           </p>
@@ -376,7 +376,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             href="/#contact"
             className="btn-ocean inline-flex items-center gap-3 px-8 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.02]"
             style={{
-              fontFamily: "Jost, sans-serif",
+              fontFamily: "var(--font-body)",
               fontSize: "11px",
               letterSpacing: "0.22em",
               textTransform: "uppercase",
@@ -401,7 +401,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       >
         <p
           className="text-mist/25 text-xs tracking-widest"
-          style={{ fontFamily: "Jost, sans-serif" }}
+          style={{ fontFamily: "var(--font-body)" }}
         >
           © {new Date().getFullYear()} Serene Sea Burials · Carolina Beach, NC
         </p>

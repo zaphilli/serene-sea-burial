@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createInquiry, getInquiries } from "@/lib/inquiries";
 import { cookies } from "next/headers";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function getLocation(req: NextRequest): Promise<string | undefined> {
   try {
@@ -29,6 +32,30 @@ export async function POST(req: NextRequest) {
     }
     const location = await getLocation(req);
     const inquiry = await createInquiry({ name, email, phone: phone ?? "", service: service ?? "", message: message ?? "", location });
+
+    const serviceLabels: Record<string, string> = {
+      attended: "Attended Ceremony",
+      unattended: "Unattended Burial",
+      shipping: "Shipping Kit",
+      preplan: "Preplanning",
+      other: "Not Sure Yet",
+    };
+
+    await resend.emails.send({
+      from: "forms@solagon.com",
+      to: "zach@solagon.com",
+      subject: `New Inquiry from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+        ${service ? `<p><strong>Service:</strong> ${serviceLabels[service] ?? service}</p>` : ""}
+        ${message ? `<p><strong>Message:</strong></p><p>${message}</p>` : ""}
+        ${location ? `<p><strong>Location:</strong> ${location}</p>` : ""}
+      `,
+    });
+
     return NextResponse.json(inquiry, { status: 201 });
   } catch {
     return NextResponse.json({ error: "Failed to save inquiry." }, { status: 500 });

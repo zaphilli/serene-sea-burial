@@ -37,7 +37,7 @@ const localBusinessSchema = {
   email: "info@sereneseaburials.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "133 Virginia Ave",
+    streetAddress: "220 Annie Dr",
     addressLocality: "Carolina Beach",
     addressRegion: "NC",
     postalCode: "28428",

@@ -9,7 +9,7 @@ export default function BackButton() {
     <button
       onClick={() => router.back()}
       className="flex w-fit items-center gap-2 text-mist/50 text-xs tracking-widest uppercase mb-8 hover:text-seafoam transition-colors duration-300"
-      style={{ fontFamily: "Jost, sans-serif" }}
+      style={{ fontFamily: "var(--font-body)" }}
     >
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
         <path

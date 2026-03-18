@@ -1,215 +1,328 @@
-"use client";
+const primaryServices = [
+  {
+    title: "Unattended Scattering",
+    badge: "Most Chosen",
+    subtitle: "For families near or far",
+    description:
+      "The captain performs a dignified scattering ceremony on your behalf, with a moment of reflection at sea. Ideal for families who cannot travel or prefer a simpler arrangement.",
+    features: [
+      "Starting at $400",
+      "Photos upon request",
+      "GPS coordinates provided",
+      "Scattering certificate included",
+    ],
+    cta: { label: "Request Shipping Kit", href: "/services/unattended-ash-scattering" },
+    featured: true,
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
+        <path
+          d="M12 28 C12 20 20 14 28 14 C36 14 40 20 40 26"
+          stroke="#4ecdc4"
+          strokeWidth="1.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M8 34 Q16 24 24 28 Q32 32 40 24"
+          stroke="rgba(78,205,196,0.4)"
+          strokeWidth="1"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <circle cx="24" cy="26" r="5" stroke="#c9a96e" strokeWidth="1.5" />
+        <path
+          d="M22 24 L24 20 L26 24 L24 28 Z"
+          fill="rgba(201,169,110,0.4)"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Attended Ceremony",
+    subtitle: "Family present on board",
+    description:
+      "A private ash scattering cruise for family and friends. Ceremonies include time for music, readings, prayer, and a personal farewell approximately 3 miles offshore.",
+    features: [
+      "Up to 6 passengers",
+      "90–120 minutes at sea",
+      "Captain-led or family-led",
+      "Personalize with flowers & music",
+    ],
+    cta: { label: "Arrange a Ceremony", href: "/services/attended-ceremony" },
+    featured: false,
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
+        <path
+          d="M8 32 Q16 20 24 26 Q32 32 40 20"
+          stroke="#4ecdc4"
+          strokeWidth="1.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M8 38 Q16 26 24 32 Q32 38 40 26"
+          stroke="rgba(78,205,196,0.4)"
+          strokeWidth="1"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <circle cx="24" cy="16" r="6" stroke="#c9a96e" strokeWidth="1.5" />
+        <path
+          d="M21 16 L24 10 L27 16"
+          stroke="#c9a96e"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <line
+          x1="24"
+          y1="10"
+          x2="24"
+          y2="22"
+          stroke="#c9a96e"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+];
 
-const services = [
+const includedFeatures = [
   {
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <path d="M8 32 Q16 20 24 26 Q32 32 40 20" stroke="#4ecdc4" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <path d="M8 38 Q16 26 24 32 Q32 38 40 26" stroke="rgba(78,205,196,0.4)" strokeWidth="1" fill="none" strokeLinecap="round"/>
-        <circle cx="24" cy="16" r="6" stroke="#c9a96e" strokeWidth="1.5"/>
-        <path d="M21 16 L24 10 L27 16" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="24" y1="10" x2="24" y2="22" stroke="#c9a96e" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Attended Ash Scattering",
-    subtitle: "Family Present On Board",
-    description:
-      "A private ash-scattering cruise with family and friends present. Ceremonies are typically 90 to 120 minutes and can include music, prayer, and personal remarks.",
-    features: ["Up to 6 passengers", "Approx. 3 miles offshore", "90-120 minute ceremony", "Captain-led or family-led farewell"],
+    title: "EPA-Compliant Filing",
+    description: "Required documentation filed within 30 days of service",
   },
   {
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <path d="M12 28 C12 20 20 14 28 14 C36 14 40 20 40 26" stroke="#4ecdc4" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <path d="M8 34 Q16 24 24 28 Q32 32 40 24" stroke="rgba(78,205,196,0.4)" strokeWidth="1" fill="none" strokeLinecap="round"/>
-        <circle cx="24" cy="26" r="5" stroke="#c9a96e" strokeWidth="1.5"/>
-        <path d="M22 24 L24 20 L26 24 L24 28 Z" fill="rgba(201,169,110,0.4)"/>
-      </svg>
-    ),
-    title: "Unattended Sea Burial",
-    subtitle: "Respectful Captain-Only Service",
-    description:
-      "For families who cannot attend in person, the captain performs a dignified scattering and moment of reflection on your behalf.",
-    features: ["Package starts at $400", "Photos upon request", "Certificate provided", "Coordinates included"],
+    title: "GPS Coordinates",
+    description: "Exact latitude and longitude recorded for your family",
   },
   {
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <rect x="16" y="12" width="16" height="20" rx="2" stroke="#c9a96e" strokeWidth="1.5"/>
-        <path d="M20 18 H28 M20 22 H28 M20 26 H25" stroke="rgba(201,169,110,0.6)" strokeWidth="1" strokeLinecap="round"/>
-        <path d="M8 36 Q16 26 24 30 Q32 34 40 26" stroke="#4ecdc4" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <path d="M8 40 Q18 32 28 36 Q36 40 40 34" stroke="rgba(78,205,196,0.3)" strokeWidth="1" fill="none" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Ceremony Flower Service",
-    subtitle: "Basket Ceremony with Roses",
-    description:
-      "The attended basket ceremony includes a rose casket spray and at least two dozen loose roses for a graceful, traditional sea farewell.",
-    features: ["Rose casket spray", "Two dozen loose roses", "Traditional basket ceremony", "Optional wreaths and upgrades"],
+    title: "Remains Transfer",
+    description: "Free USPS shipping kit or local drop-off by appointment",
   },
   {
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <path d="M10 30 Q20 15 30 22 Q38 28 42 18" stroke="#4ecdc4" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <circle cx="14" cy="16" r="3" fill="rgba(78,205,196,0.2)" stroke="#4ecdc4" strokeWidth="1"/>
-        <circle cx="24" cy="12" r="3" fill="rgba(201,169,110,0.2)" stroke="#c9a96e" strokeWidth="1"/>
-        <circle cx="34" cy="16" r="3" fill="rgba(78,205,196,0.2)" stroke="#4ecdc4" strokeWidth="1"/>
-        <path d="M14 19 L24 15 M24 15 L34 19" stroke="rgba(168,197,218,0.4)" strokeWidth="0.8" strokeDasharray="2 2"/>
-        <path d="M8 38 Q18 30 28 34 Q36 38 42 32" stroke="rgba(78,205,196,0.4)" strokeWidth="1" fill="none" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "EPA-Compliant Reporting",
-    subtitle: "Handled for Your Family",
-    description:
-      "Every sea scattering is documented and reported under EPA requirements, including position details and notification filed after the service.",
-    features: ["Latitude and longitude logged", "Depth and time recorded", "EPA report filed within 30 days", "Compliant documentation packet"],
-  },
-  {
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <path d="M24 10 L28 18 L37 19 L31 25 L32 34 L24 30 L16 34 L17 25 L11 19 L20 18 Z" stroke="#c9a96e" strokeWidth="1.5" fill="rgba(201,169,110,0.08)"/>
-        <path d="M8 40 Q18 32 28 36 Q36 40 42 34" stroke="#4ecdc4" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Remains Transfer Options",
-    subtitle: "Shipping, Pickup, or Drop-Off",
-    description:
-      "Choose the transfer method that works best for you. Free cremains shipping kits are available, and local pickup/drop-off options are offered by appointment.",
-    features: ["USPS Priority Mail Express", "Free shipping kit available", "Local New Hanover pickup", "Drop-off appointments in Wilmington"],
-  },
-  {
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <path d="M14 28 L24 12 L34 28" stroke="#4ecdc4" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M10 34 L24 34 L38 34" stroke="#4ecdc4" strokeWidth="1.5" strokeLinecap="round"/>
-        <path d="M18 34 L18 38 M30 34 L30 38" stroke="rgba(78,205,196,0.4)" strokeWidth="1" strokeLinecap="round"/>
-        <path d="M6 40 Q16 34 26 38 Q34 42 42 36" stroke="rgba(78,205,196,0.4)" strokeWidth="1" fill="none" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Preplanning Assistance",
-    subtitle: "Arrange in Advance",
-    description:
-      "Families can preplan a future sea burial with clear pricing, simple paperwork, and guidance through each step before services are needed.",
-    features: ["Online planning support", "Phone guidance available", "Simple intake process", "Peace of mind for family"],
+    title: "Flower Options",
+    description: "Rose sprays, loose roses, and wreaths available to add",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-32 overflow-hidden">
+    <section id="services" className="relative py-28 lg:py-36 overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(180deg, #0a1628 0%, #0d2847 50%, #0a1628 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(78,205,196,0.15) 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
+          background:
+            "linear-gradient(180deg, #0a1628 0%, #0d2847 50%, #0a1628 100%)",
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 lg:mb-20">
           <span
             className="inline-block text-seafoam text-xs tracking-[0.4em] uppercase mb-4"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
-            What We Offer
+            Our Services
           </span>
           <h2
             style={{
-              fontFamily: "Cormorant Garamond, serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 300,
-              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              fontSize: "clamp(2.2rem, 5vw, 4rem)",
               lineHeight: 1.1,
             }}
-            className="text-pearl mb-6"
+            className="text-pearl mb-5"
           >
-            Services Crafted
+            Choose the Path
             <br />
-            <em className="text-seafoam">with Care</em>
+            That Feels Right
           </h2>
-          <div className="divider-gold max-w-xs mx-auto" />
+          <p
+            className="text-mist/50 max-w-md mx-auto text-sm leading-relaxed"
+            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+          >
+            Every family is different. Whether you join us at sea or let our
+            captain carry your wishes, the farewell will be handled with care.
+          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
+        {/* Primary services — 2-column */}
+        <div className="grid md:grid-cols-2 gap-6 mb-20">
+          {primaryServices.map((service, i) => (
             <div
               key={i}
-              className="glass rounded-2xl p-8 group hover:border-seafoam/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-seafoam/5"
+              className="relative rounded-2xl p-8 lg:p-10 transition-all duration-500 group"
+              style={{
+                background: service.featured
+                  ? "rgba(78,205,196,0.04)"
+                  : "rgba(13,40,71,0.35)",
+                backdropFilter: "blur(12px)",
+                border: service.featured
+                  ? "1px solid rgba(78,205,196,0.2)"
+                  : "1px solid rgba(168,197,218,0.1)",
+              }}
             >
+              {/* Featured badge */}
+              {service.badge && (
+                <div
+                  className="absolute -top-3 left-8 px-4 py-1 rounded-full text-[10px] tracking-[0.2em] uppercase"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    background:
+                      "linear-gradient(135deg, rgba(78,205,196,0.9), rgba(78,205,196,0.7))",
+                    color: "#071020",
+                    fontWeight: 500,
+                  }}
+                >
+                  {service.badge}
+                </div>
+              )}
+
               {/* Icon */}
-              <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-110 transform transition-transform">
+              <div className="mb-6 opacity-70">
                 {service.icon}
               </div>
 
               {/* Title */}
-              <div className="mb-4">
-                <h3
-                  style={{
-                    fontFamily: "Cormorant Garamond, serif",
-                    fontWeight: 500,
-                    fontSize: "1.5rem",
-                  }}
-                  className="text-pearl mb-1"
-                >
-                  {service.title}
-                </h3>
-                <span
-                  className="text-seafoam text-xs tracking-[0.25em] uppercase"
-                  style={{ fontFamily: "Jost, sans-serif" }}
-                >
-                  {service.subtitle}
-                </span>
-              </div>
+              <h3
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontWeight: 500,
+                  fontSize: "1.7rem",
+                }}
+                className="text-pearl mb-1"
+              >
+                {service.title}
+              </h3>
+              <span
+                className="text-mist/40 text-xs tracking-[0.2em] uppercase block mb-5"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                {service.subtitle}
+              </span>
 
               {/* Description */}
               <p
-                className="text-mist/70 text-sm leading-relaxed mb-6"
-                style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+                className="text-mist/60 text-sm leading-relaxed mb-8"
+                style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
               >
                 {service.description}
               </p>
 
               {/* Features */}
-              <ul className="space-y-2">
+              <ul className="space-y-2.5 mb-8">
                 {service.features.map((feat, j) => (
                   <li
                     key={j}
-                    className="flex items-center gap-2 text-xs text-mist/60"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    className="flex items-center gap-3 text-sm text-mist/55"
+                    style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
                   >
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M2 6 L5 9 L10 3" stroke="#4ecdc4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      className="flex-shrink-0"
+                    >
+                      <path
+                        d="M2.5 7 L5.5 10 L11.5 3.5"
+                        stroke={service.featured ? "#4ecdc4" : "#c9a96e"}
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                     {feat}
                   </li>
                 ))}
               </ul>
+
+              {/* CTA */}
+              <a
+                href={service.cta.href}
+                className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase transition-all duration-300 group-hover:gap-3"
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontWeight: 500,
+                  color: service.featured ? "#4ecdc4" : "#c9a96e",
+                }}
+              >
+                {service.cta.label}
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M2 7H12M8.5 3.5L12 7L8.5 10.5"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        {/* Included features */}
+        <div>
+          <div className="text-center mb-10">
+            <span
+              className="text-mist/35 text-xs tracking-[0.3em] uppercase"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              Included with Every Service
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {includedFeatures.map((feat, i) => (
+              <div
+                key={i}
+                className="rounded-xl p-5 text-center"
+                style={{
+                  background: "rgba(13,40,71,0.3)",
+                  border: "1px solid rgba(168,197,218,0.06)",
+                }}
+              >
+                <h4
+                  className="text-pearl/80 text-sm mb-1.5"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 500,
+                    fontSize: "1rem",
+                  }}
+                >
+                  {feat.title}
+                </h4>
+                <p
+                  className="text-mist/35 text-xs leading-relaxed"
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                >
+                  {feat.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Preplanning note */}
+        <div className="text-center mt-14">
           <p
-            className="text-mist/60 mb-6 text-sm"
-            style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+            className="text-mist/40 text-sm mb-3"
+            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
           >
-            Not sure which service is right for you?
+            Planning ahead? We offer preplanning with clear pricing and simple
+            paperwork.
           </p>
           <a
-            href="#contact"
-            className="btn-ocean inline-block px-10 py-3 rounded-full border border-seafoam/40 text-seafoam text-sm tracking-widest uppercase hover:border-seafoam hover:bg-seafoam/10 transition-all duration-300"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            href="/services/preplanning"
+            className="text-seafoam/70 text-xs tracking-widest uppercase hover:text-seafoam transition-colors duration-300"
+            style={{ fontFamily: "var(--font-body)" }}
           >
-            Talk to Our Team
+            Learn about preplanning →
           </a>
         </div>
       </div>

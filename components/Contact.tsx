@@ -22,7 +22,7 @@ function FloatingField({
         htmlFor={id}
         className="absolute left-0 pointer-events-none transition-all duration-300"
         style={{
-          fontFamily: "Jost, sans-serif",
+          fontFamily: "var(--font-body)",
           top: active ? "0px" : "20px",
           fontSize: active ? "10px" : "13px",
           letterSpacing: active ? "0.15em" : "0.05em",
@@ -93,7 +93,7 @@ export default function Contact() {
   ];
 
   const inputStyle: React.CSSProperties = {
-    fontFamily: "Jost, sans-serif",
+    fontFamily: "var(--font-body)",
   };
 
   return (
@@ -121,13 +121,13 @@ export default function Contact() {
           <div>
             <span
               className="inline-block text-seafoam text-xs tracking-[0.4em] uppercase mb-4"
-              style={{ fontFamily: "Jost, sans-serif" }}
+              style={{ fontFamily: "var(--font-body)" }}
             >
               Reach Out
             </span>
             <h2
               style={{
-                fontFamily: "Cormorant Garamond, serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 300,
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
@@ -143,7 +143,7 @@ export default function Contact() {
 
             <p
               className="text-mist/70 leading-relaxed mb-12 max-w-md"
-              style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
             >
               Ask questions, request a shipping kit, or arrange a ceremony.
               We keep the process clear, respectful, and easy to navigate for
@@ -190,7 +190,7 @@ export default function Contact() {
                     </svg>
                   ),
                   label: "Office",
-                  value: "133 Virginia Ave, Carolina Beach, NC 28428",
+                  value: "220 Annie Dr, Carolina Beach, NC 28428",
                 },
                 {
                   icon: (
@@ -210,13 +210,13 @@ export default function Contact() {
                   <div>
                     <div
                       className="text-mist/40 text-xs tracking-widest uppercase mb-1"
-                      style={{ fontFamily: "Jost, sans-serif" }}
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
                       {item.label}
                     </div>
                     <div
                       className="text-pearl text-sm"
-                      style={{ fontFamily: "Jost, sans-serif" }}
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
                       {item.value}
                     </div>
@@ -276,7 +276,7 @@ export default function Contact() {
                 </div>
                 <h3
                   style={{
-                    fontFamily: "Cormorant Garamond, serif",
+                    fontFamily: "var(--font-display)",
                     fontSize: "2.2rem",
                     fontWeight: 400,
                   }}
@@ -287,7 +287,7 @@ export default function Contact() {
                 <div className="divider-gold w-20 mx-auto mb-6" />
                 <p
                   className="text-mist/60 text-sm leading-relaxed max-w-xs mx-auto"
-                  style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
                 >
                   A member of our team will be in touch shortly. We are here for you.
                 </p>
@@ -296,7 +296,7 @@ export default function Contact() {
               <div>
                 <h3
                   style={{
-                    fontFamily: "Cormorant Garamond, serif",
+                    fontFamily: "var(--font-display)",
                     fontSize: "1.9rem",
                     fontWeight: 400,
                   }}
@@ -306,7 +306,7 @@ export default function Contact() {
                 </h3>
                 <p
                   className="text-mist/35 text-xs mb-9"
-                  style={{ fontFamily: "Jost, sans-serif" }}
+                  style={{ fontFamily: "var(--font-body)" }}
                 >
                   All inquiries are kept strictly confidential.
                 </p>
@@ -390,7 +390,7 @@ export default function Contact() {
                     <div
                       className="text-xs tracking-widest uppercase mb-3"
                       style={{
-                        fontFamily: "Jost, sans-serif",
+                        fontFamily: "var(--font-body)",
                         color: "rgba(168,197,218,0.45)",
                       }}
                     >
@@ -406,7 +406,7 @@ export default function Contact() {
                           }
                           className="px-4 py-2 rounded-full text-xs transition-all duration-300"
                           style={{
-                            fontFamily: "Jost, sans-serif",
+                            fontFamily: "var(--font-body)",
                             letterSpacing: "0.06em",
                             background:
                               form.service === s.value
@@ -457,7 +457,7 @@ export default function Contact() {
                     <p
                       className="text-xs text-center px-4 py-2 rounded-xl"
                       style={{
-                        fontFamily: "Jost, sans-serif",
+                        fontFamily: "var(--font-body)",
                         background: "rgba(255,80,80,0.08)",
                         border: "1px solid rgba(255,80,80,0.2)",
                         color: "rgba(255,150,150,0.9)",
@@ -472,7 +472,7 @@ export default function Contact() {
                     disabled={submitting}
                     className="btn-ocean group w-full py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] mt-2"
                     style={{
-                      fontFamily: "Jost, sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontSize: "11px",
                       letterSpacing: "0.22em",
                       textTransform: "uppercase",
@@ -501,7 +501,7 @@ export default function Contact() {
 
                   <p
                     className="text-mist/25 text-xs text-center"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     We respond as soon as possible during business hours.
                   </p>

@@ -1,5 +1,3 @@
-"use client";
-
 const testimonials = [
   {
     quote:
@@ -33,7 +31,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-32 overflow-hidden">
+    <section id="testimonials" className="relative py-24 lg:py-32 overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
@@ -42,47 +40,28 @@ export default function Testimonials() {
         }}
       />
 
-      {/* Large background text */}
-      <div
-        className="absolute inset-0 flex items-center justify-center opacity-[0.02] select-none pointer-events-none overflow-hidden"
-        aria-hidden
-      >
-        <span
-          style={{
-            fontFamily: "Cormorant Garamond, serif",
-            fontSize: "25vw",
-            fontWeight: 300,
-            color: "#4ecdc4",
-            whiteSpace: "nowrap",
-          }}
-        >
-          Farewell
-        </span>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 lg:mb-20">
           <span
             className="inline-block text-seafoam text-xs tracking-[0.4em] uppercase mb-4"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
-            Families We've Served
+            Families We&apos;ve Served
           </span>
           <h2
             style={{
-              fontFamily: "Cormorant Garamond, serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 300,
-              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              fontSize: "clamp(2.2rem, 5vw, 4rem)",
               lineHeight: 1.1,
             }}
-            className="text-pearl mb-6"
+            className="text-pearl"
           >
-            Words from
+            Words from Those
             <br />
-            <em className="text-seafoam">Those Who Know</em>
+            <em className="text-seafoam">Who Know</em>
           </h2>
-          <div className="divider-gold max-w-xs mx-auto" />
         </div>
 
         {/* Testimonial grid */}
@@ -90,31 +69,18 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="glass rounded-2xl p-8 group hover:border-seafoam/25 transition-all duration-500"
+              className="glass rounded-2xl p-8 lg:p-10 transition-all duration-500"
             >
-              {/* Quote mark */}
-              <div
-                className="text-seafoam/20 mb-4 leading-none"
-                style={{
-                  fontFamily: "Cormorant Garamond, serif",
-                  fontSize: "5rem",
-                  lineHeight: 0.8,
-                }}
-                aria-hidden
-              >
-                "
-              </div>
-
               <blockquote
-                className="text-pearl leading-relaxed mb-8"
+                className="text-pearl/90 leading-relaxed mb-8"
                 style={{
-                  fontFamily: "Cormorant Garamond, serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 400,
-                  fontSize: "1.25rem",
+                  fontSize: "1.15rem",
                   fontStyle: "normal",
                 }}
               >
-                {t.quote}
+                &ldquo;{t.quote}&rdquo;
               </blockquote>
 
               <div className="flex items-center gap-4">
@@ -122,9 +88,8 @@ export default function Testimonials() {
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center text-ocean-deep font-medium text-sm flex-shrink-0"
                   style={{
-                    background:
-                      "linear-gradient(135deg, #4ecdc4, #1a4a7a)",
-                    fontFamily: "Jost, sans-serif",
+                    background: "linear-gradient(135deg, #4ecdc4, #1a4a7a)",
+                    fontFamily: "var(--font-body)",
                   }}
                 >
                   {t.initial}
@@ -133,13 +98,13 @@ export default function Testimonials() {
                 <div>
                   <div
                     className="text-pearl text-sm font-medium"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     {t.name}
                   </div>
                   <div
                     className="text-mist/40 text-xs tracking-wider"
-                    style={{ fontFamily: "Jost, sans-serif" }}
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
                     {t.location}
                   </div>
@@ -148,7 +113,13 @@ export default function Testimonials() {
                 {/* Stars */}
                 <div className="ml-auto flex gap-1">
                   {[...Array(5)].map((_, si) => (
-                    <svg key={si} width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <svg
+                      key={si}
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
                       <path
                         d="M6 1 L7.5 4.5 L11 5 L8.5 7.5 L9 11 L6 9.5 L3 11 L3.5 7.5 L1 5 L4.5 4.5 Z"
                         fill="#c9a96e"

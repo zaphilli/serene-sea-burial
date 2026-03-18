@@ -33,7 +33,7 @@ export default async function AdminPage() {
           <div>
             <span
               className="text-sm font-medium"
-              style={{ fontFamily: "Jost, sans-serif", color: "#0f172a" }}
+              style={{ fontFamily: "var(--font-body)", color: "#0f172a" }}
             >
               Inquiries
             </span>
@@ -41,7 +41,7 @@ export default async function AdminPage() {
               <span
                 className="ml-2 text-[10px] px-2 py-0.5 rounded-full font-medium"
                 style={{
-                  fontFamily: "Jost, sans-serif",
+                  fontFamily: "var(--font-body)",
                   background: "#e6faf8",
                   color: "#0e7c75",
                   border: "1px solid #9de5e0",
@@ -57,7 +57,7 @@ export default async function AdminPage() {
           <Link
             href="/"
             className="text-xs font-medium tracking-wide uppercase transition-colors hover:opacity-70"
-            style={{ fontFamily: "Jost, sans-serif", color: "#64748b" }}
+            style={{ fontFamily: "var(--font-body)", color: "#64748b" }}
           >
             View Site
           </Link>
@@ -65,7 +65,7 @@ export default async function AdminPage() {
             <button
               type="submit"
               className="text-xs font-medium tracking-wide uppercase transition-colors hover:opacity-70"
-              style={{ fontFamily: "Jost, sans-serif", color: "#64748b" }}
+              style={{ fontFamily: "var(--font-body)", color: "#64748b" }}
             >
               Sign Out
             </button>

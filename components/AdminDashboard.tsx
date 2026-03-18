@@ -93,7 +93,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 onClick={() => setFilter(f)}
                 className="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
                 style={{
-                  fontFamily: "Jost, sans-serif",
+                  fontFamily: "var(--font-body)",
                   ...(filter === f
                     ? { background: "#0d2847", color: "#ffffff", border: "1px solid #0d2847" }
                     : { background: "#f1f5f9", color: "#64748b", border: "1px solid #e2e8f0" }),
@@ -110,7 +110,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
           {filtered.length === 0 && (
             <div
               className="p-8 text-center text-sm"
-              style={{ fontFamily: "Jost, sans-serif", color: "#94a3b8" }}
+              style={{ fontFamily: "var(--font-body)", color: "#94a3b8" }}
             >
               No inquiries
             </div>
@@ -130,7 +130,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 <span
                   className="text-sm font-semibold truncate"
                   style={{
-                    fontFamily: "Jost, sans-serif",
+                    fontFamily: "var(--font-body)",
                     color: inquiry.status === "new" ? "#0f172a" : "#475569",
                   }}
                 >
@@ -139,7 +139,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 <span
                   className="text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 font-medium"
                   style={{
-                    fontFamily: "Jost, sans-serif",
+                    fontFamily: "var(--font-body)",
                     background: STATUS_COLORS[inquiry.status].bg,
                     color: STATUS_COLORS[inquiry.status].text,
                     border: `1px solid ${STATUS_COLORS[inquiry.status].border}`,
@@ -150,14 +150,14 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
               </div>
               <div
                 className="text-xs truncate mb-1"
-                style={{ fontFamily: "Jost, sans-serif", color: "#64748b" }}
+                style={{ fontFamily: "var(--font-body)", color: "#64748b" }}
               >
                 {SERVICE_LABELS[inquiry.service] ?? inquiry.service}
               </div>
               <div className="flex items-center justify-between gap-2">
                 <div
                   className="text-xs"
-                  style={{ fontFamily: "Jost, sans-serif", color: "#94a3b8" }}
+                  style={{ fontFamily: "var(--font-body)", color: "#94a3b8" }}
                 >
                   {formatDate(inquiry.createdAt)}
                 </div>
@@ -165,7 +165,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                   <span
                     className="text-[10px] px-2 py-0.5 rounded-full flex-shrink-0"
                     style={{
-                      fontFamily: "Jost, sans-serif",
+                      fontFamily: "var(--font-body)",
                       background: "#f1f5f9",
                       color: "#64748b",
                       border: "1px solid #e2e8f0",
@@ -188,7 +188,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
               <div className="mb-3" style={{ fontSize: "3rem", color: "#cbd5e1" }}>✦</div>
               <p
                 className="text-sm"
-                style={{ fontFamily: "Jost, sans-serif", color: "#94a3b8" }}
+                style={{ fontFamily: "var(--font-body)", color: "#94a3b8" }}
               >
                 Select an inquiry to view details
               </p>
@@ -202,7 +202,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 <h2
                   className="mb-1"
                   style={{
-                    fontFamily: "Cormorant Garamond, serif",
+                    fontFamily: "var(--font-display)",
                     fontSize: "2rem",
                     fontWeight: 500,
                     color: "#0f172a",
@@ -212,7 +212,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 </h2>
                 <p
                   className="text-xs"
-                  style={{ fontFamily: "Jost, sans-serif", color: "#94a3b8" }}
+                  style={{ fontFamily: "var(--font-body)", color: "#94a3b8" }}
                 >
                   Received {formatDate(selected.createdAt)}
                 </p>
@@ -220,7 +220,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
               <span
                 className="text-xs px-3 py-1.5 rounded-full font-medium"
                 style={{
-                  fontFamily: "Jost, sans-serif",
+                  fontFamily: "var(--font-body)",
                   background: STATUS_COLORS[selected.status].bg,
                   color: STATUS_COLORS[selected.status].text,
                   border: `1px solid ${STATUS_COLORS[selected.status].border}`,
@@ -251,7 +251,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 <div key={field.label}>
                   <div
                     className="text-[10px] tracking-widest uppercase mb-1 font-medium"
-                    style={{ fontFamily: "Jost, sans-serif", color: "#94a3b8" }}
+                    style={{ fontFamily: "var(--font-body)", color: "#94a3b8" }}
                   >
                     {field.label}
                   </div>
@@ -259,14 +259,14 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                     <a
                       href={field.href}
                       className="text-sm font-medium hover:underline"
-                      style={{ fontFamily: "Jost, sans-serif", color: "#0e7c75" }}
+                      style={{ fontFamily: "var(--font-body)", color: "#0e7c75" }}
                     >
                       {field.value}
                     </a>
                   ) : (
                     <div
                       className="text-sm font-medium"
-                      style={{ fontFamily: "Jost, sans-serif", color: "#1e293b" }}
+                      style={{ fontFamily: "var(--font-body)", color: "#1e293b" }}
                     >
                       {field.value}
                     </div>
@@ -280,14 +280,14 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
               <div className="mb-8">
                 <div
                   className="text-[10px] tracking-widest uppercase mb-3 font-medium"
-                  style={{ fontFamily: "Jost, sans-serif", color: "#94a3b8" }}
+                  style={{ fontFamily: "var(--font-body)", color: "#94a3b8" }}
                 >
                   Message
                 </div>
                 <div
                   className="p-5 rounded-2xl text-sm leading-relaxed"
                   style={{
-                    fontFamily: "Jost, sans-serif",
+                    fontFamily: "var(--font-body)",
                     color: "#334155",
                     background: "#ffffff",
                     border: "1px solid #e2e8f0",
@@ -309,7 +309,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                     onClick={() => setStatus(selected.id, s)}
                     className="px-4 py-2 rounded-xl text-xs font-medium tracking-wide uppercase transition-all duration-200 hover:opacity-80"
                     style={{
-                      fontFamily: "Jost, sans-serif",
+                      fontFamily: "var(--font-body)",
                       background: STATUS_COLORS[s].bg,
                       color: STATUS_COLORS[s].text,
                       border: `1px solid ${STATUS_COLORS[s].border}`,
@@ -323,7 +323,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 href={`mailto:${selected.email}`}
                 className="px-4 py-2 rounded-xl text-xs font-medium tracking-wide uppercase transition-all duration-200 hover:opacity-80"
                 style={{
-                  fontFamily: "Jost, sans-serif",
+                  fontFamily: "var(--font-body)",
                   background: "#0d2847",
                   color: "#ffffff",
                   border: "1px solid #0d2847",
@@ -337,7 +337,7 @@ export default function AdminDashboard({ initial }: { initial: Inquiry[] }) {
                 disabled={deleting === selected.id}
                 className="px-4 py-2 rounded-xl text-xs font-medium tracking-wide uppercase transition-all duration-200 hover:opacity-80 ml-auto"
                 style={{
-                  fontFamily: "Jost, sans-serif",
+                  fontFamily: "var(--font-body)",
                   background: "#fff1f1",
                   color: "#dc2626",
                   border: "1px solid #fecaca",

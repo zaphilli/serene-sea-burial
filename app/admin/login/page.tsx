@@ -34,13 +34,13 @@ export default async function LoginPage({
 
         <h1
           className="text-pearl text-center mb-1"
-          style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.6rem", fontWeight: 400 }}
+          style={{ fontFamily: "var(--font-display)", fontSize: "1.6rem", fontWeight: 400 }}
         >
           Admin Access
         </h1>
         <p
           className="text-mist/40 text-xs text-center tracking-widest uppercase mb-8"
-          style={{ fontFamily: "Jost, sans-serif" }}
+          style={{ fontFamily: "var(--font-body)" }}
         >
           Serene Sea Burials
         </p>
@@ -52,7 +52,7 @@ export default async function LoginPage({
               background: "rgba(255,80,80,0.08)",
               border: "1px solid rgba(255,80,80,0.2)",
               color: "rgba(255,150,150,0.9)",
-              fontFamily: "Jost, sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             Incorrect password. Please try again.
@@ -68,7 +68,7 @@ export default async function LoginPage({
               required
               className="w-full bg-transparent px-4 py-3 rounded-xl text-pearl text-sm outline-none transition-colors duration-300"
               style={{
-                fontFamily: "Jost, sans-serif",
+                fontFamily: "var(--font-body)",
                 border: "1px solid rgba(168,197,218,0.15)",
               }}
             />
@@ -77,7 +77,7 @@ export default async function LoginPage({
             type="submit"
             className="w-full py-3 rounded-xl text-xs tracking-widest uppercase font-medium transition-all duration-300 hover:scale-[1.02]"
             style={{
-              fontFamily: "Jost, sans-serif",
+              fontFamily: "var(--font-body)",
               background: "linear-gradient(135deg, rgba(78,205,196,0.9), rgba(78,205,196,0.7))",
               color: "#071020",
             }}

@@ -26,13 +26,13 @@ export default function Insights() {
           <div>
             <span
               className="inline-block text-seafoam text-xs tracking-[0.4em] uppercase mb-4"
-              style={{ fontFamily: "Jost, sans-serif" }}
+              style={{ fontFamily: "var(--font-body)" }}
             >
               From Our Team
             </span>
             <h2
               style={{
-                fontFamily: "Cormorant Garamond, serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 300,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
                 lineHeight: 1.15,
@@ -70,14 +70,14 @@ export default function Insights() {
 
               <span
                 className="inline-block text-seafoam text-[10px] tracking-[0.35em] uppercase mb-4"
-                style={{ fontFamily: "Jost, sans-serif" }}
+                style={{ fontFamily: "var(--font-body)" }}
               >
                 {post.category}
               </span>
 
               <h3
                 style={{
-                  fontFamily: "Cormorant Garamond, serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 400,
                   fontSize: "1.45rem",
                   lineHeight: 1.25,
@@ -89,7 +89,7 @@ export default function Insights() {
 
               <p
                 style={{
-                  fontFamily: "Jost, sans-serif",
+                  fontFamily: "var(--font-body)",
                   fontWeight: 300,
                   lineHeight: 1.7,
                 }}
@@ -101,13 +101,13 @@ export default function Insights() {
               <div className="flex items-center justify-between">
                 <span
                   className="text-mist/30 text-xs"
-                  style={{ fontFamily: "Jost, sans-serif" }}
+                  style={{ fontFamily: "var(--font-body)" }}
                 >
                   {post.readTime}
                 </span>
                 <span
                   className="flex items-center gap-2 text-seafoam text-xs tracking-widest uppercase transition-all duration-300 group-hover:gap-3"
-                  style={{ fontFamily: "Jost, sans-serif" }}
+                  style={{ fontFamily: "var(--font-body)" }}
                 >
                   Read
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

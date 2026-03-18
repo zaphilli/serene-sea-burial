@@ -51,13 +51,13 @@ export default function FAQ() {
         <div className="text-center mb-20">
           <span
             className="inline-block text-seafoam text-xs tracking-[0.4em] uppercase mb-4"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Common Questions
           </span>
           <h2
             style={{
-              fontFamily: "Cormorant Garamond, serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 300,
               fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
               lineHeight: 1.1,
@@ -91,7 +91,7 @@ export default function FAQ() {
                 <span
                   className="text-pearl group-hover:text-seafoam transition-colors duration-300 pr-4"
                   style={{
-                    fontFamily: "Cormorant Garamond, serif",
+                    fontFamily: "var(--font-display)",
                     fontWeight: 500,
                     fontSize: "1.15rem",
                   }}
@@ -135,7 +135,7 @@ export default function FAQ() {
               >
                 <p
                   className="px-6 pb-6 text-mist/70 leading-relaxed text-sm"
-                  style={{ fontFamily: "Jost, sans-serif", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
                 >
                   {faq.a}
                 </p>
@@ -147,14 +147,14 @@ export default function FAQ() {
         <div className="text-center mt-12">
           <p
             className="text-mist/50 text-sm mb-4"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Have a question we haven't answered?
           </p>
           <a
             href="#contact"
             className="text-seafoam text-sm tracking-widest uppercase hover-underline"
-            style={{ fontFamily: "Jost, sans-serif" }}
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Contact our team →
           </a>
