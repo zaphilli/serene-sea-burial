@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 export default function InnerCTA({
-  title = "Ready to Begin?",
-  subtitle = "We\u2019re here whenever you\u2019re ready to take the next step.",
-  primaryLabel = "Begin Planning",
+  title = "We\u2019re Here When You\u2019re Ready",
+  subtitle = "There\u2019s no rush. Whenever the time feels right, we\u2019re here to help.",
+  primaryLabel = "Speak With Us",
   primaryHref = "/contact",
-  secondaryLabel = "Call (910) 444-7148",
-  secondaryHref = "tel:+19104447148",
+  secondaryLabel = "Call (910) 833-1900",
+  secondaryHref = "tel:+19108331900",
 }: {
   title?: string;
   subtitle?: string;
@@ -41,7 +41,7 @@ export default function InnerCTA({
         <h2
           style={{
             fontFamily: "var(--font-display)",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "clamp(2rem, 4vw, 3rem)",
             lineHeight: 1.15,
           }}
@@ -51,7 +51,7 @@ export default function InnerCTA({
         </h2>
         <p
           className="text-mist/50 mb-10 max-w-md mx-auto"
-          style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+          style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
         >
           {subtitle}
         </p>

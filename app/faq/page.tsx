@@ -245,7 +245,7 @@ export default function FAQPage() {
                 >
                   <p
                     className="px-6 pb-6 text-mist/65 leading-relaxed text-sm"
-                    style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                    style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                   >
                     {faq.a}
                   </p>

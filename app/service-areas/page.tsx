@@ -23,63 +23,75 @@ export const metadata: Metadata = {
 const localAreas = [
   {
     name: "Carolina Beach",
-    detail: "Home base \u2014 departure point for all ceremonies",
+    detail: "Home base — departure point for all ceremonies",
     type: "primary" as const,
-  },
-  {
-    name: "Kure Beach",
-    detail: "5 minutes from our dock",
-    type: "primary" as const,
+    href: "/service-areas/carolina-beach",
   },
   {
     name: "Wilmington",
     detail: "20 minutes to Carolina Beach",
     type: "primary" as const,
-  },
-  {
-    name: "Wrightsville Beach",
-    detail: "25 minutes to Carolina Beach",
-    type: "primary" as const,
+    href: "/service-areas/wilmington",
   },
   {
     name: "Southport",
     detail: "30 minutes via ferry or 50 minutes by road",
-    type: "secondary" as const,
-  },
-  {
-    name: "Leland",
-    detail: "30 minutes to Carolina Beach",
-    type: "secondary" as const,
-  },
-  {
-    name: "Hampstead",
-    detail: "40 minutes to Carolina Beach",
-    type: "secondary" as const,
+    type: "primary" as const,
+    href: "/service-areas/southport",
   },
   {
     name: "Jacksonville",
     detail: "1 hour to Carolina Beach",
     type: "secondary" as const,
-  },
-  {
-    name: "Myrtle Beach, SC",
-    detail: "1.5 hours to Carolina Beach",
-    type: "secondary" as const,
-  },
-  {
-    name: "Raleigh / Durham",
-    detail: "2.5 hours \u2014 shipping kit recommended",
-    type: "secondary" as const,
-  },
-  {
-    name: "Charlotte",
-    detail: "3.5 hours \u2014 shipping kit recommended",
-    type: "secondary" as const,
+    href: "/service-areas/jacksonville",
   },
   {
     name: "Fayetteville",
     detail: "2 hours to Carolina Beach",
     type: "secondary" as const,
+    href: "/service-areas/fayetteville",
+  },
+  {
+    name: "Raleigh",
+    detail: "2.5 hours — shipping kit recommended",
+    type: "secondary" as const,
+    href: "/service-areas/raleigh",
+  },
+  {
+    name: "Cary",
+    detail: "2.5 hours — shipping kit recommended",
+    type: "secondary" as const,
+    href: "/service-areas/cary",
+  },
+  {
+    name: "Durham",
+    detail: "2.5 hours — shipping kit recommended",
+    type: "secondary" as const,
+    href: "/service-areas/durham",
+  },
+  {
+    name: "Charlotte",
+    detail: "3.5 hours — shipping kit recommended",
+    type: "secondary" as const,
+    href: "/service-areas/charlotte",
+  },
+  {
+    name: "Kure Beach",
+    detail: "5 minutes from our dock",
+    type: "primary" as const,
+    href: null,
+  },
+  {
+    name: "Wrightsville Beach",
+    detail: "25 minutes to Carolina Beach",
+    type: "secondary" as const,
+    href: null,
+  },
+  {
+    name: "Leland",
+    detail: "30 minutes to Carolina Beach",
+    type: "secondary" as const,
+    href: null,
   },
 ];
 
@@ -113,7 +125,7 @@ export default function ServiceAreasPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -123,7 +135,7 @@ export default function ServiceAreasPage() {
             </h2>
             <p
               className="text-mist/50 max-w-lg mx-auto"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               Families in the greater Wilmington area and across coastal North
               Carolina can attend ceremonies in person or choose our unattended
@@ -132,39 +144,53 @@ export default function ServiceAreasPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {localAreas.map((area, i) => (
-              <div
-                key={i}
-                className="rounded-xl p-5"
-                style={{
-                  background:
-                    area.type === "primary"
-                      ? "rgba(78,205,196,0.04)"
-                      : "rgba(13,40,71,0.3)",
-                  border:
-                    area.type === "primary"
-                      ? "1px solid rgba(78,205,196,0.15)"
-                      : "1px solid rgba(168,197,218,0.06)",
-                }}
-              >
-                <h3
-                  className="text-pearl text-sm mb-1"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 500,
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  {area.name}
-                </h3>
-                <p
-                  className="text-mist/40 text-xs"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
-                >
-                  {area.detail}
-                </p>
-              </div>
-            ))}
+            {localAreas.map((area, i) => {
+              const cardClass = `rounded-xl p-5 block transition-all duration-300 ${
+                area.href ? "hover:border-seafoam/30 group" : ""
+              }`;
+              const cardStyle = {
+                background:
+                  area.type === "primary"
+                    ? "rgba(78,205,196,0.04)"
+                    : "rgba(13,40,71,0.3)",
+                border:
+                  area.type === "primary"
+                    ? "1px solid rgba(78,205,196,0.15)"
+                    : "1px solid rgba(168,197,218,0.06)",
+              };
+              const inner = (
+                <>
+                  <h3
+                    className={`text-pearl text-sm mb-1 ${area.href ? "group-hover:text-seafoam transition-colors" : ""}`}
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontWeight: 500,
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    {area.name}
+                    {area.href && (
+                      <span className="text-seafoam/40 ml-1.5 text-xs">→</span>
+                    )}
+                  </h3>
+                  <p
+                    className="text-mist/40 text-xs"
+                    style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
+                  >
+                    {area.detail}
+                  </p>
+                </>
+              );
+              return area.href ? (
+                <Link key={i} href={area.href} className={cardClass} style={cardStyle}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={i} className={cardClass} style={cardStyle}>
+                  {inner}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -189,7 +215,7 @@ export default function ServiceAreasPage() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
               lineHeight: 1.15,
             }}
@@ -199,7 +225,7 @@ export default function ServiceAreasPage() {
           </h2>
           <p
             className="text-mist/55 max-w-xl mx-auto leading-relaxed mb-8"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             Our free USPS Priority Mail Express shipping kit makes it possible
             for families anywhere in the United States to arrange an unattended
@@ -224,7 +250,7 @@ export default function ServiceAreasPage() {
                 </div>
                 <div
                   className="text-mist/40 text-xs"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {item.detail}
                 </div>

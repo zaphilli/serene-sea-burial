@@ -33,7 +33,7 @@ export default function Insights() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
                 lineHeight: 1.15,
               }}
@@ -90,7 +90,7 @@ export default function Insights() {
               <p
                 style={{
                   fontFamily: "var(--font-body)",
-                  fontWeight: 300,
+                  fontWeight: 400,
                   lineHeight: 1.7,
                 }}
                 className="text-mist/55 text-sm mb-7"

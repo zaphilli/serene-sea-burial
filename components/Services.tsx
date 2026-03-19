@@ -1,7 +1,7 @@
 const primaryServices = [
   {
     title: "Unattended Scattering",
-    badge: "Most Chosen",
+    badge: "Most Popular",
     subtitle: "For families near or far",
     description:
       "The captain performs a dignified scattering ceremony on your behalf, with a moment of reflection at sea. Ideal for families who cannot travel or prefer a simpler arrangement.",
@@ -131,7 +131,7 @@ export default function Services() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "clamp(2.2rem, 5vw, 4rem)",
               lineHeight: 1.1,
             }}
@@ -143,7 +143,7 @@ export default function Services() {
           </h2>
           <p
             className="text-mist/50 max-w-md mx-auto text-sm leading-relaxed"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             Every family is different. Whether you join us at sea or let our
             captain carry your wishes, the farewell will be handled with care.
@@ -208,7 +208,7 @@ export default function Services() {
               {/* Description */}
               <p
                 className="text-mist/60 text-sm leading-relaxed mb-8"
-                style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
               >
                 {service.description}
               </p>
@@ -219,7 +219,7 @@ export default function Services() {
                   <li
                     key={j}
                     className="flex items-center gap-3 text-sm text-mist/55"
-                    style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                    style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                   >
                     <svg
                       width="14"
@@ -299,7 +299,7 @@ export default function Services() {
                 </h4>
                 <p
                   className="text-mist/35 text-xs leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {feat.description}
                 </p>
@@ -312,7 +312,7 @@ export default function Services() {
         <div className="text-center mt-14">
           <p
             className="text-mist/40 text-sm mb-3"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             Planning ahead? We offer preplanning with clear pricing and simple
             paperwork.

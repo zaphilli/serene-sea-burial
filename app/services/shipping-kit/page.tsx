@@ -53,7 +53,7 @@ export default function ShippingKitPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -90,7 +90,7 @@ export default function ShippingKitPage() {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: "2rem",
-                    fontWeight: 300,
+                    fontWeight: 400,
                   }}
                 >
                   {step.num}
@@ -107,7 +107,7 @@ export default function ShippingKitPage() {
                 </h3>
                 <p
                   className="text-mist/50 text-sm leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {step.description}
                 </p>
@@ -131,7 +131,7 @@ export default function ShippingKitPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -195,7 +195,7 @@ export default function ShippingKitPage() {
                       className="text-mist/40 text-xs"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}
                     >
                       {item.detail}
@@ -210,7 +210,7 @@ export default function ShippingKitPage() {
           <div className="mt-8 text-center">
             <p
               className="text-mist/35 text-xs leading-relaxed max-w-lg mx-auto"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               USPS Priority Mail Express is the only mail service authorized by
               the U.S. Postal Service for shipping cremated remains. Our kit is
@@ -243,7 +243,7 @@ export default function ShippingKitPage() {
             </h3>
             <p
               className="text-mist/50 text-sm leading-relaxed max-w-md mx-auto mb-4"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               If you&apos;re in the New Hanover County area, we also offer local
               drop-off and pickup by appointment at our Carolina Beach location.

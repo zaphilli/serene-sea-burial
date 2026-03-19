@@ -63,7 +63,7 @@ export default function ContactPage() {
                 </h3>
                 <p
                   className="text-mist/45 text-xs leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {item.description}
                 </p>

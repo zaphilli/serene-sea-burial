@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -72,7 +73,7 @@ export default function AboutPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
                 lineHeight: 1.15,
               }}
@@ -86,7 +87,7 @@ export default function AboutPage() {
 
           <div
             className="space-y-6 text-mist/60 leading-relaxed max-w-2xl mx-auto text-center"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             <p>
               Serene Sea Burials was founded with a simple belief: that saying
@@ -106,6 +107,18 @@ export default function AboutPage() {
               ceremony — attended or unattended — with the same respect and
               reverence.
             </p>
+          </div>
+
+          {/* Crew photo */}
+          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mt-16 max-w-3xl mx-auto">
+            <Image
+              src="/media/crew-sunset.jpg"
+              alt="Serene Sea Burials crew at sunset heading out from Carolina Beach"
+              fill
+              className="object-cover object-[center_25%]"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/60 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -130,7 +143,7 @@ export default function AboutPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
                 lineHeight: 1.15,
               }}
@@ -158,7 +171,7 @@ export default function AboutPage() {
                 </h3>
                 <p
                   className="text-mist/55 text-sm leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {value.description}
                 </p>
@@ -188,7 +201,7 @@ export default function AboutPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(2rem, 4vw, 3rem)",
                 lineHeight: 1.15,
               }}
@@ -202,7 +215,7 @@ export default function AboutPage() {
 
           <div
             className="space-y-6 text-mist/60 leading-relaxed max-w-2xl mx-auto text-center"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             <p>
               Sea burial is one of the oldest traditions in human history.
@@ -275,7 +288,7 @@ export default function AboutPage() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
               lineHeight: 1.15,
             }}
@@ -285,7 +298,7 @@ export default function AboutPage() {
           </h2>
           <p
             className="text-mist/50 max-w-lg mx-auto leading-relaxed mb-8"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             Located at 220 Annie Dr, Carolina Beach, NC 28428. We serve
             families across North Carolina and accept shipped remains from
@@ -306,7 +319,7 @@ export default function AboutPage() {
                 className="text-pearl text-sm"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                (910) 444-7148
+                (910) 833-1900
               </span>
             </div>
             <div className="flex items-center gap-3">

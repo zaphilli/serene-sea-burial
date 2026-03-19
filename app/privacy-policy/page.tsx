@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
         />
         <div
           className="relative z-10 max-w-3xl mx-auto px-6 legal-content"
-          style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+          style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
         >
           <p className="text-mist/40 text-xs mb-12">
             Last updated: March 18, 2026
@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
               title: "Contact Us",
               content: [
                 "If you have questions about this privacy policy, please contact us:",
-                "Serene Sea Burials\n220 Annie Dr\nCarolina Beach, NC 28428\n(910) 444-7148\ninfo@sereneseaburials.com",
+                "Serene Sea Burials\n220 Annie Dr\nCarolina Beach, NC 28428\n(910) 833-1900\ninfo@sereneseaburials.com",
               ],
             },
           ].map((section, i) => (

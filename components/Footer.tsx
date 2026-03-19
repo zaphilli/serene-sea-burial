@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -26,57 +27,21 @@ export default function Footer() {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 pt-8 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             {/* Brand */}
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-                  <circle
-                    cx="18"
-                    cy="18"
-                    r="17"
-                    stroke="rgba(78,205,196,0.4)"
-                    strokeWidth="1"
-                  />
-                  <path
-                    d="M4 22 Q9 14 18 18 Q27 22 32 14"
-                    stroke="#4ecdc4"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M14 12 L18 6 L22 12"
-                    stroke="#c9a96e"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <line
-                    x1="18"
-                    y1="6"
-                    x2="18"
-                    y2="22"
-                    stroke="#c9a96e"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <span
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontWeight: 600,
-                    fontSize: "1.2rem",
-                  }}
-                  className="text-pearl"
-                >
-                  Serene Sea Burials
-                </span>
+            <div className="lg:col-span-2">
+              <div className="mb-6">
+                <Image
+                  src="/logo.png"
+                  alt="Serene Sea Burials"
+                  width={160}
+                  height={115}
+                  className="object-contain h-20 w-auto brightness-125 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+                />
               </div>
               <p
                 className="text-mist/50 text-sm leading-relaxed max-w-xs"
-                style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
               >
                 Compassionate sea scattering services from Carolina Beach,
                 North Carolina. Attended and unattended options with full
@@ -141,6 +106,7 @@ export default function Footer() {
                   { label: "Attended Ceremony", href: "/services/attended-ceremony" },
                   { label: "Shipping Kit", href: "/services/shipping-kit" },
                   { label: "Preplanning", href: "/services/preplanning" },
+                  { label: "Arrange a Service", href: "/order" },
                   { label: "All Services", href: "/services" },
                 ].map((item) => (
                   <li key={item.label}>
@@ -149,7 +115,40 @@ export default function Footer() {
                       className="text-mist/60 text-sm hover:text-seafoam transition-colors duration-300 hover-underline"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources links */}
+            <div>
+              <h4
+                className="text-mist/40 text-xs tracking-[0.3em] uppercase mb-6"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Resources
+              </h4>
+              <ul className="space-y-3">
+                {[
+                  { label: "FAQ", href: "/faq" },
+                  { label: "Grief & Guidance", href: "/grief-and-guidance" },
+                  { label: "EPA Compliance", href: "/epa-compliance" },
+                  { label: "Shipping Instructions", href: "/shipping-instructions" },
+                  { label: "Authorization Form", href: "/authorization-form" },
+                  { label: "Blog", href: "/blog" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-mist/60 text-sm hover:text-seafoam transition-colors duration-300 hover-underline"
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontWeight: 400,
                       }}
                     >
                       {item.label}
@@ -170,10 +169,8 @@ export default function Footer() {
               <ul className="space-y-3">
                 {[
                   { label: "About Us", href: "/about" },
-                  { label: "FAQ", href: "/faq" },
-                  { label: "Blog", href: "/blog" },
-                  { label: "Service Areas", href: "/service-areas" },
                   { label: "Contact", href: "/contact" },
+                  { label: "Service Areas", href: "/service-areas" },
                 ].map((item) => (
                   <li key={item.label}>
                     <Link
@@ -181,7 +178,7 @@ export default function Footer() {
                       className="text-mist/60 text-sm hover:text-seafoam transition-colors duration-300 hover-underline"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}
                     >
                       {item.label}
@@ -216,6 +213,13 @@ export default function Footer() {
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Terms of Service
+              </Link>
+              <Link
+                href="/cancellation-policy"
+                className="text-mist/30 text-xs hover:text-mist/60 transition-colors duration-300"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
+                Cancellation Policy
               </Link>
               <Link
                 href="/admin"

@@ -58,7 +58,7 @@ export default function FAQ() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
               lineHeight: 1.1,
             }}
@@ -135,7 +135,7 @@ export default function FAQ() {
               >
                 <p
                   className="px-6 pb-6 text-mist/70 leading-relaxed text-sm"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {faq.a}
                 </p>

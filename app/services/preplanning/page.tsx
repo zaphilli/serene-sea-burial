@@ -46,7 +46,7 @@ export default function PreplanningPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -58,7 +58,7 @@ export default function PreplanningPage() {
             </h2>
             <p
               className="text-mist/55 max-w-xl mx-auto leading-relaxed"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               Preplanning removes the burden of decision-making from your loved
               ones during an already difficult time. It&apos;s one of the most
@@ -102,7 +102,7 @@ export default function PreplanningPage() {
                 </h3>
                 <p
                   className="text-mist/50 text-sm leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {item.description}
                 </p>
@@ -133,7 +133,7 @@ export default function PreplanningPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -193,7 +193,7 @@ export default function PreplanningPage() {
                     className="text-mist/50 text-sm leading-relaxed"
                     style={{
                       fontFamily: "var(--font-body)",
-                      fontWeight: 300,
+                      fontWeight: 400,
                     }}
                   >
                     {step.description}
@@ -208,10 +208,10 @@ export default function PreplanningPage() {
       <InnerCTA
         title="Start the Conversation"
         subtitle="No pressure, no obligation. Just a chance to discuss what matters to you."
-        primaryLabel="Contact Us"
+        primaryLabel="Speak With Us"
         primaryHref="/contact"
-        secondaryLabel="Call (910) 444-7148"
-        secondaryHref="tel:+19104447148"
+        secondaryLabel="Call (910) 833-1900"
+        secondaryHref="tel:+19108331900"
       />
       <Footer />
     </main>

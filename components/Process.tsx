@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const steps = [
   {
     num: "01",
@@ -61,7 +63,7 @@ export default function Process() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
                 lineHeight: 1.15,
               }}
@@ -74,152 +76,23 @@ export default function Process() {
 
             <p
               className="text-mist/60 leading-relaxed max-w-md mb-10"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               The entire process is designed to be calm and straightforward.
               From scheduling to final paperwork, each step is handled with care
               so your family can focus on remembrance.
             </p>
 
-            {/* Decorative ocean scene */}
-            <div className="hidden lg:block">
-              <svg
-                viewBox="0 0 500 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full opacity-50"
-              >
-                <defs>
-                  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#0a1628" />
-                    <stop
-                      offset="100%"
-                      stopColor="#1a4a7a"
-                      stopOpacity="0.3"
-                    />
-                  </linearGradient>
-                  <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop
-                      offset="0%"
-                      stopColor="#1a4a7a"
-                      stopOpacity="0.4"
-                    />
-                    <stop offset="100%" stopColor="#0d2847" />
-                  </linearGradient>
-                </defs>
-                <rect width="500" height="200" fill="url(#skyGrad)" />
-                {/* Stars */}
-                {[
-                  [50, 20, 1.2, 0.6],
-                  [120, 40, 0.8, 0.7],
-                  [200, 15, 1.4, 0.5],
-                  [280, 35, 0.6, 0.8],
-                  [350, 10, 1.0, 0.5],
-                  [420, 30, 1.3, 0.7],
-                  [470, 50, 0.7, 0.6],
-                  [80, 60, 1.1, 0.5],
-                  [160, 50, 0.9, 0.7],
-                  [240, 70, 1.3, 0.6],
-                  [320, 45, 0.7, 0.8],
-                  [400, 65, 1.0, 0.5],
-                  [460, 80, 1.2, 0.7],
-                ].map(([x, y, r, opacity], i) => (
-                  <circle
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    r={r}
-                    fill="white"
-                    opacity={opacity}
-                  />
-                ))}
-                {/* Moon */}
-                <circle
-                  cx="420"
-                  cy="40"
-                  r="18"
-                  fill="rgba(201,169,110,0.15)"
-                  stroke="rgba(201,169,110,0.3)"
-                  strokeWidth="1"
-                />
-                <circle cx="410" cy="36" r="14" fill="#071020" />
-                {/* Sea */}
-                <rect
-                  x="0"
-                  y="120"
-                  width="500"
-                  height="80"
-                  fill="url(#seaGrad)"
-                />
-                {/* Water waves */}
-                <path
-                  d="M0 130 Q62 120 125 130 Q187 140 250 130 Q312 120 375 130 Q437 140 500 130"
-                  stroke="rgba(78,205,196,0.3)"
-                  strokeWidth="1"
-                  fill="none"
-                />
-                <path
-                  d="M0 145 Q62 135 125 145 Q187 155 250 145 Q312 135 375 145 Q437 155 500 145"
-                  stroke="rgba(78,205,196,0.2)"
-                  strokeWidth="1"
-                  fill="none"
-                />
-                <path
-                  d="M0 160 Q62 150 125 160 Q187 170 250 160 Q312 150 375 160 Q437 170 500 160"
-                  stroke="rgba(78,205,196,0.15)"
-                  strokeWidth="0.8"
-                  fill="none"
-                />
-                {/* Moon reflection */}
-                <path
-                  d="M400 125 Q415 130 430 125"
-                  stroke="rgba(201,169,110,0.4)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M395 135 Q415 140 435 135"
-                  stroke="rgba(201,169,110,0.25)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                {/* Boat silhouette */}
-                <path
-                  d="M220 118 L280 118 L290 128 L210 128 Z"
-                  fill="rgba(10,22,40,0.9)"
-                  stroke="rgba(168,197,218,0.3)"
-                  strokeWidth="0.5"
-                />
-                <path
-                  d="M248 105 L252 105 L252 118 L248 118 Z"
-                  fill="rgba(168,197,218,0.4)"
-                />
-                <path
-                  d="M248 105 L265 113 L248 118 Z"
-                  fill="rgba(168,197,218,0.2)"
-                  stroke="rgba(168,197,218,0.3)"
-                  strokeWidth="0.5"
-                />
-                {/* Flowers on water */}
-                <circle
-                  cx="180"
-                  cy="132"
-                  r="3"
-                  fill="rgba(255,255,255,0.3)"
-                />
-                <circle
-                  cx="310"
-                  cy="135"
-                  r="2"
-                  fill="rgba(255,255,255,0.25)"
-                />
-                <circle
-                  cx="160"
-                  cy="148"
-                  r="2.5"
-                  fill="rgba(255,255,255,0.2)"
-                />
-              </svg>
+            {/* Process photo */}
+            <div className="hidden lg:block relative aspect-[16/10] rounded-2xl overflow-hidden">
+              <Image
+                src="/media/basket-urns-wispy-sky.jpg"
+                alt="Ceremony basket with flowers and urns on the boat, open ocean and sky"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071020]/50 via-transparent to-[#071020]/20" />
             </div>
           </div>
 
@@ -265,7 +138,7 @@ export default function Process() {
                       className="text-mist/50 text-sm leading-relaxed"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}
                     >
                       {step.description}

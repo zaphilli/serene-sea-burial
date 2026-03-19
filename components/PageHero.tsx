@@ -19,16 +19,33 @@ export default function PageHero({
         }}
       />
 
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="orb absolute w-[400px] h-[400px] opacity-[0.05]"
-          style={{
-            background: "radial-gradient(circle, #4ecdc4 0%, transparent 70%)",
-            top: "10%",
-            right: "10%",
-            animationDuration: "20s",
-          }}
-        />
+      {/* Subtle wave pattern */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.04]">
+        <svg
+          viewBox="0 0 1440 400"
+          fill="none"
+          className="absolute bottom-0 w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 280 Q180 220 360 260 Q540 300 720 240 Q900 180 1080 230 Q1260 280 1440 220"
+            stroke="#4ecdc4"
+            strokeWidth="1.5"
+            fill="none"
+          />
+          <path
+            d="M0 320 Q180 260 360 300 Q540 340 720 280 Q900 220 1080 270 Q1260 320 1440 260"
+            stroke="#4ecdc4"
+            strokeWidth="1"
+            fill="none"
+          />
+          <path
+            d="M0 360 Q180 300 360 340 Q540 380 720 320 Q900 260 1080 310 Q1260 360 1440 300"
+            stroke="#4ecdc4"
+            strokeWidth="0.6"
+            fill="none"
+          />
+        </svg>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -56,7 +73,7 @@ export default function PageHero({
         <h1
           style={{
             fontFamily: "var(--font-display)",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
             lineHeight: 1.1,
           }}
@@ -68,7 +85,7 @@ export default function PageHero({
         {subtitle && (
           <p
             className="text-mist/55 max-w-xl mx-auto leading-relaxed"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             {subtitle}
           </p>

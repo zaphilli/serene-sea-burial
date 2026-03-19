@@ -1,20 +1,31 @@
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Deep ocean gradient background */}
+      {/* Layer 1: Ocean video — furthest back, subtle */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-50"
+      >
+        <source src="/media/ocean-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Layer 2: Deep ocean gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse at 20% 50%, rgba(26,74,122,0.4) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(13,40,71,0.6) 0%, transparent 50%),
+            radial-gradient(ellipse at 20% 50%, rgba(26,74,122,0.25) 0%, transparent 60%),
+            radial-gradient(ellipse at 80% 20%, rgba(13,40,71,0.35) 0%, transparent 50%),
             radial-gradient(ellipse at 50% 90%, rgba(78,205,196,0.06) 0%, transparent 40%),
-            linear-gradient(180deg, #0a1628 0%, #0d2847 50%, #0a1628 100%)
+            linear-gradient(180deg, rgba(10,22,40,0.8) 0%, rgba(13,40,71,0.55) 50%, rgba(10,22,40,0.8) 100%)
           `,
         }}
       />
 
-      {/* Gentle ambient floating light — CSS-only, no canvas */}
+      {/* Layer 3: Floating orbs / ambient light */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           className="orb absolute w-[500px] h-[500px] opacity-[0.07]"
@@ -47,7 +58,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Subtle horizon line */}
+      {/* Layer 4: Subtle horizon line */}
       <div
         className="absolute left-0 right-0 bottom-[30%] h-px opacity-[0.06]"
         style={{
@@ -56,7 +67,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Content */}
+      {/* Layer 5: Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div
           className="animate-fade-up"
@@ -74,7 +85,7 @@ export default function Hero() {
           className="animate-fade-up mt-8 mb-8"
           style={{
             fontFamily: "var(--font-display)",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "clamp(3rem, 8vw, 7rem)",
             lineHeight: 1.05,
             letterSpacing: "-0.02em",
@@ -85,14 +96,14 @@ export default function Hero() {
           <span className="text-pearl">A Peaceful</span>
           <br />
           <span className="text-pearl">Return </span>
-          <em style={{ fontWeight: 300, color: "#4ecdc4" }}>to the Sea</em>
+          <em style={{ fontWeight: 400, color: "#4ecdc4" }}>to the Sea</em>
         </h1>
 
         <p
           className="animate-fade-up text-mist/70 mb-12 max-w-lg mx-auto leading-relaxed"
           style={{
             fontFamily: "var(--font-body)",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "1.05rem",
             animationDelay: "0.5s",
             opacity: 0,
@@ -116,14 +127,14 @@ export default function Hero() {
                 "linear-gradient(135deg, rgba(78,205,196,0.95) 0%, rgba(78,205,196,0.8) 100%)",
             }}
           >
-            Begin Planning
+            Speak With Us
           </a>
           <a
             href="/services"
             className="px-10 py-4 rounded-full border border-pearl/20 text-pearl/80 tracking-widest uppercase text-xs transition-all duration-300 hover:border-pearl/40 hover:bg-pearl/5"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            View Services
+            Learn More
           </a>
         </div>
 

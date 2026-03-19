@@ -87,7 +87,7 @@ function renderSection(section: Section, i: number) {
       return (
         <p
           key={i}
-          style={{ fontFamily: "var(--font-body)", fontWeight: 300, lineHeight: 1.9 }}
+          style={{ fontFamily: "var(--font-body)", fontWeight: 400, lineHeight: 1.9 }}
           className="text-mist/80 mb-5 text-[15px]"
         >
           {section.text}
@@ -124,7 +124,7 @@ function renderSection(section: Section, i: number) {
           {section.items?.map((item, j) => (
             <li
               key={j}
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
               className="text-mist/80 text-[15px] flex items-start gap-3"
             >
               <span className="text-seafoam mt-1 flex-shrink-0">—</span>
@@ -307,7 +307,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
               lineHeight: 1.15,
             }}
@@ -321,7 +321,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               fontFamily: "var(--font-display)",
               fontStyle: "italic",
               fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
-              fontWeight: 300,
+              fontWeight: 400,
             }}
             className="text-mist/60 mb-8 leading-relaxed"
           >
@@ -368,7 +368,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </h3>
           <p
             className="text-mist/60 text-sm mb-7 max-w-md mx-auto leading-relaxed"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             Whether you are planning ahead or navigating a loss right now, our team is ready to answer every question — with no pressure and no obligation.
           </p>

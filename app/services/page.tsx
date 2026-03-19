@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Unattended Ash Scattering",
-    badge: "Most Chosen",
+    badge: "Most Popular",
     subtitle: "For families near or far",
     description:
       "The captain performs a dignified scattering ceremony on your behalf, with a moment of reflection at sea. Ideal for families who cannot travel or prefer a simpler arrangement.",
@@ -169,7 +169,7 @@ export default function ServicesPage() {
 
                 <p
                   className="text-mist/55 text-sm leading-relaxed mb-6"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {service.description}
                 </p>
@@ -179,7 +179,7 @@ export default function ServicesPage() {
                     <li
                       key={j}
                       className="flex items-center gap-3 text-sm text-mist/50"
-                      style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                      style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                     >
                       <svg
                         width="14"
@@ -240,7 +240,7 @@ export default function ServicesPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -250,7 +250,7 @@ export default function ServicesPage() {
             </h2>
             <p
               className="text-mist/45 text-sm"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               No hidden fees. These are standard with every package.
             </p>
@@ -274,7 +274,7 @@ export default function ServicesPage() {
                 </h3>
                 <p
                   className="text-mist/35 text-xs leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {item.description}
                 </p>
@@ -304,7 +304,7 @@ export default function ServicesPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -324,7 +324,7 @@ export default function ServicesPage() {
                     <th className="p-5 text-pearl/70 font-normal tracking-wider uppercase text-xs text-center">Attended</th>
                   </tr>
                 </thead>
-                <tbody className="text-mist/60" style={{ fontWeight: 300 }}>
+                <tbody className="text-mist/60" style={{ fontWeight: 400 }}>
                   {[
                     ["Family on board", "No", "Up to 6"],
                     ["Duration", "Captain\u2019s discretion", "90\u2013120 min"],

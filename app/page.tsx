@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -33,7 +34,7 @@ const localBusinessSchema = {
   description:
     "EPA-compliant ash scattering and burial at sea services from Carolina Beach, North Carolina. Attended and unattended ceremonies with full legal documentation.",
   url: siteUrl,
-  telephone: "+19104447148",
+  telephone: "+19108331900",
   email: "info@sereneseaburials.com",
   address: {
     "@type": "PostalAddress",
@@ -194,6 +195,22 @@ export default function Home() {
       <Process />
       <About />
       <Testimonials />
+
+      {/* Cinematic photo break */}
+      <section className="relative overflow-hidden">
+        <div className="relative aspect-[21/8] md:aspect-[21/7]">
+          <Image
+            src="/media/flowers-deep-blue.jpg"
+            alt="Flowers floating peacefully on the deep blue ocean after a scattering ceremony"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #071020 0%, transparent 30%, transparent 70%, #0a1628 100%)" }} />
+        </div>
+      </section>
+
       <FAQ />
       <Insights />
       <Contact />

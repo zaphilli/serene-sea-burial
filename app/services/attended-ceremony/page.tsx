@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -105,7 +106,7 @@ export default function AttendedPage() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                   lineHeight: 1.15,
                 }}
@@ -117,7 +118,7 @@ export default function AttendedPage() {
               </h2>
               <div
                 className="space-y-5 text-mist/60 leading-relaxed"
-                style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
               >
                 <p>
                   An attended ceremony gives your family the opportunity to be
@@ -176,7 +177,7 @@ export default function AttendedPage() {
                       className="flex items-start gap-3 text-sm text-mist/60"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}
                     >
                       <svg
@@ -211,6 +212,20 @@ export default function AttendedPage() {
         </div>
       </section>
 
+      {/* Ceremony photo */}
+      <section className="relative overflow-hidden">
+        <div className="relative aspect-[21/7] md:aspect-[21/6]">
+          <Image
+            src="/media/family-on-boat.jpg"
+            alt="Family aboard the vessel during an attended sea burial ceremony at sunset"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #0a1628 0%, transparent 20%, transparent 80%, #0a1628 100%)" }} />
+        </div>
+      </section>
+
       {/* What to expect */}
       <section className="relative py-20 lg:py-24 overflow-hidden">
         <div
@@ -232,7 +247,7 @@ export default function AttendedPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -272,7 +287,7 @@ export default function AttendedPage() {
                     className="text-mist/50 text-sm leading-relaxed"
                     style={{
                       fontFamily: "var(--font-body)",
-                      fontWeight: 300,
+                      fontWeight: 400,
                     }}
                   >
                     {item.description}
@@ -298,7 +313,7 @@ export default function AttendedPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -308,7 +323,7 @@ export default function AttendedPage() {
             </h2>
             <p
               className="text-mist/50 max-w-md mx-auto mt-4"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               Every ceremony is different. Here are some of the ways families
               personalize the experience.
@@ -337,7 +352,7 @@ export default function AttendedPage() {
                 </h3>
                 <p
                   className="text-mist/45 text-xs leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {item.description}
                 </p>
@@ -359,7 +374,7 @@ export default function AttendedPage() {
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <p
             className="text-mist/40 text-sm mb-3"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             Not sure if attended is right for your family?
           </p>
@@ -374,9 +389,9 @@ export default function AttendedPage() {
       </section>
 
       <InnerCTA
-        title="Arrange a Ceremony"
-        subtitle="Contact us to schedule an attended ash scattering ceremony from Carolina Beach."
-        primaryLabel="Contact Us"
+        title="We're Here When You're Ready"
+        subtitle="Whenever the time feels right, we'll help you arrange a meaningful ceremony."
+        primaryLabel="Speak With Us"
         primaryHref="/contact"
       />
       <Footer />

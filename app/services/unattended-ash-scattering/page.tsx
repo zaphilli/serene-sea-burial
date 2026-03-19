@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
@@ -130,7 +131,7 @@ export default function UnattendedPage() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                   lineHeight: 1.15,
                 }}
@@ -142,7 +143,7 @@ export default function UnattendedPage() {
               </h2>
               <div
                 className="space-y-5 text-mist/60 leading-relaxed"
-                style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
               >
                 <p>
                   Our unattended scattering service is designed for families who
@@ -198,7 +199,7 @@ export default function UnattendedPage() {
                       className="flex items-start gap-3 text-sm text-mist/60"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}
                     >
                       <svg
@@ -245,6 +246,20 @@ export default function UnattendedPage() {
         </div>
       </section>
 
+      {/* Full-width ceremony photo */}
+      <section className="relative overflow-hidden">
+        <div className="relative aspect-[21/7] md:aspect-[21/6]">
+          <Image
+            src="/media/basket-urns-wispy-sky.jpg"
+            alt="Ceremony basket with flowers and memorial urns aboard the vessel, wide ocean horizon"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #0a1628 0%, transparent 20%, transparent 80%, #0a1628 100%)" }} />
+        </div>
+      </section>
+
       {/* Process */}
       <section className="relative py-20 lg:py-24 overflow-hidden">
         <div
@@ -266,7 +281,7 @@ export default function UnattendedPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -312,7 +327,7 @@ export default function UnattendedPage() {
                       className="text-mist/50 text-sm leading-relaxed"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontWeight: 300,
+                        fontWeight: 400,
                       }}
                     >
                       {step.description}
@@ -339,7 +354,7 @@ export default function UnattendedPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -395,7 +410,7 @@ export default function UnattendedPage() {
                 </h3>
                 <p
                   className="text-mist/45 text-xs leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {item.description}
                 </p>
@@ -419,7 +434,7 @@ export default function UnattendedPage() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 lineHeight: 1.15,
               }}
@@ -444,7 +459,7 @@ export default function UnattendedPage() {
                 </h3>
                 <p
                   className="text-mist/55 text-sm leading-relaxed"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   {faq.a}
                 </p>
@@ -465,9 +480,9 @@ export default function UnattendedPage() {
       </section>
 
       <InnerCTA
-        title="Ready to Begin?"
-        subtitle="Request a free shipping kit or ask us any questions."
-        primaryLabel="Request Shipping Kit"
+        title="We're Here to Help"
+        subtitle="Have questions or ready to take the next step? We'll walk you through everything with care."
+        primaryLabel="Reach Out to Us"
         primaryHref="/contact"
       />
       <Footer />

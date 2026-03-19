@@ -118,7 +118,7 @@ export default function About() {
           <h2
             style={{
               fontFamily: "var(--font-display)",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)",
               lineHeight: 1.15,
             }}
@@ -131,7 +131,7 @@ export default function About() {
 
           <div
             className="max-w-2xl mx-auto space-y-5 text-mist/60 leading-relaxed"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             <p>
               Serene Sea Burials serves families from Carolina Beach with
@@ -154,7 +154,7 @@ export default function About() {
 
           <p
             className="text-mist/40 text-sm max-w-md mx-auto leading-relaxed"
-            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
           >
             A calm, respectful process can make an overwhelming moment feel
             manageable for the whole family.

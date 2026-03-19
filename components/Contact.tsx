@@ -128,7 +128,7 @@ export default function Contact() {
             <h2
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 300,
+                fontWeight: 400,
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
                 lineHeight: 1.1,
               }}
@@ -143,7 +143,7 @@ export default function Contact() {
 
             <p
               className="text-mist/70 leading-relaxed mb-12 max-w-md"
-              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+              style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
             >
               Ask questions, request a shipping kit, or arrange a ceremony.
               We keep the process clear, respectful, and easy to navigate for
@@ -165,7 +165,7 @@ export default function Contact() {
                     </svg>
                   ),
                   label: "Phone",
-                  value: "(910) 444-7148",
+                  value: "(910) 833-1900",
                 },
                 {
                   icon: (
@@ -287,7 +287,7 @@ export default function Contact() {
                 <div className="divider-gold w-20 mx-auto mb-6" />
                 <p
                   className="text-mist/60 text-sm leading-relaxed max-w-xs mx-auto"
-                  style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body)", fontWeight: 400 }}
                 >
                   A member of our team will be in touch shortly. We are here for you.
                 </p>

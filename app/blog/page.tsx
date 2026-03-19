@@ -103,7 +103,7 @@ export default function BlogPage() {
                 <p
                   style={{
                     fontFamily: "var(--font-body)",
-                    fontWeight: 300,
+                    fontWeight: 400,
                     lineHeight: 1.7,
                   }}
                   className="text-mist/50 text-sm mb-7"
