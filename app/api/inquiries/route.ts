@@ -3,8 +3,6 @@ import { createInquiry, getInquiries } from "@/lib/inquiries";
 import { cookies } from "next/headers";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 async function getLocation(req: NextRequest): Promise<string | undefined> {
   try {
     const ip =
@@ -33,6 +31,7 @@ export async function POST(req: NextRequest) {
     const location = await getLocation(req);
     const inquiry = await createInquiry({ name, email, phone: phone ?? "", service: service ?? "", message: message ?? "", location });
 
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const serviceLabels: Record<string, string> = {
       attended: "Attended Ceremony",
       unattended: "Unattended Burial",
